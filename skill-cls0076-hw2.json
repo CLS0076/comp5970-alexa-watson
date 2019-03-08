@@ -1,0 +1,268 @@
+{
+  "name": "cls0076-hw2",
+  "intents": [
+    {
+      "intent": "hw2-start",
+      "examples": [
+        {
+          "text": "launch cloud nine"
+        },
+        {
+          "text": "start cloud nine"
+        },
+        {
+          "text": "launch skill"
+        },
+        {
+          "text": "launch cloud 9"
+        },
+        {
+          "text": "start cloud 9"
+        },
+        {
+          "text": "launch"
+        },
+        {
+          "text": "start"
+        },
+        {
+          "text": "start skill"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "hw2-q2",
+      "examples": [
+        {
+          "text": "professor"
+        },
+        {
+          "text": "lecturer"
+        },
+        {
+          "text": "who is my favorite teacher"
+        },
+        {
+          "text": "fav teacher"
+        },
+        {
+          "text": "who is my teacher"
+        },
+        {
+          "text": "who teaches this course"
+        },
+        {
+          "text": "who is the best teacher"
+        },
+        {
+          "text": "teacher"
+        },
+        {
+          "text": "who is my fav teacher"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "hw2-q1",
+      "examples": [
+        {
+          "text": "who are my team members"
+        },
+        {
+          "text": "who are my teammates"
+        },
+        {
+          "text": "team"
+        },
+        {
+          "text": "show me my team members"
+        },
+        {
+          "text": "show me my teammates"
+        },
+        {
+          "text": "who is on my team"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "hw2-q3",
+      "examples": [
+        {
+          "text": "erl's definition of the cloud"
+        },
+        {
+          "text": "what is cloud computing"
+        },
+        {
+          "text": "cloud"
+        },
+        {
+          "text": "cloud computing"
+        },
+        {
+          "text": "thomas erl's defintion of the cloud"
+        },
+        {
+          "text": "what is the cloud"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "language": "en",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-09-20"
+    }
+  },
+  "description": "",
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Question 1 Node",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Your team members are Eman Ali Albader, Connor L Sorrells, and Jordan W Sorrells."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#hw2-q1",
+      "dialog_node": "node_1_1551118805721",
+      "previous_sibling": "node_1_1552070670495"
+    },
+    {
+      "type": "standard",
+      "title": "Launch Skill",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#hw2-start",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1552070670495",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_3_1551118967520"
+    },
+    {
+      "type": "standard",
+      "title": "Question 2 Node",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Your favorite teacher is Rodrigo Sardinas."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#hw2-q2",
+      "dialog_node": "node_2_1551118903655",
+      "previous_sibling": "node_1_1551118805721"
+    },
+    {
+      "type": "standard",
+      "title": "Question 3 Node",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thomas Erl defines cloud computing as a specialized form of distributed computing that introduces utilization models for remotely provisioning scalable and measured resources."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#hw2-q3",
+      "dialog_node": "node_3_1551118967520",
+      "previous_sibling": "node_2_1551118903655"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "workspace_id": "45e2a570-2764-47ad-a461-b17f6d005258",
+  "counterexamples": [],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    }
+  },
+  "learning_opt_out": false,
+  "status": "Available"
+}

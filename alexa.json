@@ -1,0 +1,49 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "cloud nine",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "EverythingIntent",
+                    "slots": [
+                        {
+                            "name": "EverythingSlot",
+                            "type": "BAG_OF_WORDS"
+                        }
+                    ],
+                    "samples": [
+                        "{EverythingSlot}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "BAG_OF_WORDS",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Hello World!"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
