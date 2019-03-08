@@ -87,12 +87,18 @@ function sendResponse(response, resolve) {
   // Get text from JSON Watson response
   const output = response.output.text.join(' ');
   console.log('Output text: ' + output);
+  
+  var stopSkill = false;
+  
+  if (output == "Thank you for using Alexa and Watson.") {
+	  stopSkill = true;
+  }
 
   // Resolve the main promise now that we have our response
   resolve({
     version: '1.0',
     response: {
-      shouldEndSession: false,
+      shouldEndSession: stopSkill,
       outputSpeech: {
         type: 'PlainText',
         text: output

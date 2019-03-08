@@ -4,22 +4,6 @@
             "invocationName": "cloud nine",
             "intents": [
                 {
-                    "name": "AMAZON.CancelIntent",
-                    "samples": []
-                },
-                {
-                    "name": "AMAZON.HelpIntent",
-                    "samples": []
-                },
-                {
-                    "name": "AMAZON.StopIntent",
-                    "samples": []
-                },
-                {
-                    "name": "AMAZON.NavigateHomeIntent",
-                    "samples": []
-                },
-                {
                     "name": "EverythingIntent",
                     "slots": [
                         {
@@ -30,6 +14,10 @@
                     "samples": [
                         "{EverythingSlot}"
                     ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
                 }
             ],
             "types": [
